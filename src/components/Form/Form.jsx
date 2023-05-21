@@ -12,10 +12,10 @@ const Form = props => {
 
   const handleInputChange = evt => {
     const {
-      target: { name, number, value },
+      target: { name, value },
     } = evt;
     if (name === 'name') setName(value);
-    if (name === 'number') setNumber(value);
+    else if (name === 'number') setNumber(value);
   };
 
   const handleFormSubmitAddContact = evt => {
