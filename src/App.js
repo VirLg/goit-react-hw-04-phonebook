@@ -28,18 +28,18 @@ const App = () => {
     if (localStorage.contacts) {
       const jsonContacts = localStorage.getItem('contacts');
       const parseJson = JSON.parse(jsonContacts);
-      setState({
-        contacts: parseJson,
-      });
+      console.log(parseJson);
+      //   setState({
+      //     contacts: parseJson,
+      //   });
     }
   };
 
   const componentDidUpdate = (prevProps, prevState) => {
     console.log('adasdasd');
 
-    console.log(JSON.stringify(state.contacts));
-    if (state.contacts !== prevState.contacts)
-      localStorage.setItem('contacts', JSON.stringify(state.contacts));
+    if (contacts !== prevState)
+      localStorage.setItem('contacts', JSON.stringify(contacts));
   };
 
   const formSubmitHendler = data => {
