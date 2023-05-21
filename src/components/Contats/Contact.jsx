@@ -1,31 +1,24 @@
-import PropTypes from 'prop-types';
-import { ContactList } from './Contacts.stayld';
 
 
 export const Contact=function({contacts, onDeleteContact}){
 
-return(<ul>
-    {contacts.map(({id,name,number})=>
+
+
+return(<ul>{contacts.map(({id,name,number})=>
     
-    <ContactList key={id}>
-        <p>{name}</p> 
-        <p>{number}</p>
+    <li key={id}>
+        <span>{name}</span> 
+        <span>{number}</span>
         <button type="button" onClick={()=>{onDeleteContact(id)}}>Delete</button>
-    </ContactList>
+    </li>
     )
     }
  
 </ul>)
 } 
 
-Contact.propTypes={
-    
-    contacts: PropTypes.array.isRequired,
-
-}
 
 
- 
 
 
 
