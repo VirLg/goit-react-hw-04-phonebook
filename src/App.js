@@ -52,7 +52,9 @@ const App = () => {
 
   const handleSearchInput = evt => setFilter(evt.target.value);
 
-  const visibleContacts = contacts.filter(el => el.name.includes(filter));
+  const visibleContacts = contacts.filter(el =>
+    el.name.toLowerCase().includes(filter.toLowerCase())
+  );
 
   return (
     <>
