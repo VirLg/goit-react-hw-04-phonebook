@@ -3,7 +3,6 @@ import { useState } from 'react';
 // import { nanoid } from 'nanoid';
 // ==================Hooks===================
 const Form = props => {
-  console.log(props);
   const { onSubmit } = props;
   //useState*
   const [name, setName] = useState('');
