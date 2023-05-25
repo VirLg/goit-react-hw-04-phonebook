@@ -50,11 +50,10 @@ const App = () => {
     }
   };
 
-  const handleSearchInput = evt => {
-    setContacts({
-      filter: evt.target.value,
-    });
-  };
+  const handleSearchInput = evt => setFilter(evt.target.value);
+
+  const visibleContacts = contacts.filter(el => el.name.includes(filter));
+
   return (
     <>
       <Section>
@@ -65,7 +64,8 @@ const App = () => {
       <Section>
         <h2>Contacts</h2>
         <Filter value={filter} onChange={handleSearchInput} />
-        <Contact contacts={contacts} onDeleteContact={DeleteContact} />
+
+        <Contact contacts={visibleContacts} onDeleteContact={DeleteContact} />
       </Section>
     </>
   );
