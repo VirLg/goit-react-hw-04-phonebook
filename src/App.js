@@ -36,7 +36,6 @@ const App = () => {
         name,
         number,
       };
-
       setContacts(prevState => [contact, ...prevState]);
     }
   };
@@ -46,16 +45,15 @@ const App = () => {
   }, [contacts]);
 
   const DeleteContact = ContactId => {
-    console.log(ContactId);
     if (contacts !== []) {
       setContacts(prevState => prevState.filter(el => el.id !== ContactId));
     }
   };
 
   const handleSearchInput = evt => {
-    //   setContacts({
-    //     filter: evt.target.value,
-    //   });
+    setContacts({
+      filter: evt.target.value,
+    });
   };
   return (
     <>

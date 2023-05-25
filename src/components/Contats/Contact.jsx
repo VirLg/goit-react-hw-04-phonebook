@@ -1,5 +1,3 @@
-import { useEffect } from 'react';
-
 export const Contact = function (props) {
   const { contacts, onDeleteContact } = props;
   console.log(props);
